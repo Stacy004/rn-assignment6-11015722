@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   },
   productContainer: {
     padding: 10,
-    marginBottom: 60,
+    marginBottom: 50,
   },
   dress: {
     flexDirection: 'row',

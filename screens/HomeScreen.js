@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { imagePaths } from './imagePaths'; // Import imagePaths
 
 const HomeScreen = ({ navigation }) => {
   const addToCart = async (item) => {
@@ -19,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
         <Image source={require('../assets/Logo.png')} />
         <View style={styles.inner}>
           <Image source={require('../assets/Search.png')} />
-          <TouchableOpacity onPress={() => navigation.navigate('CartScreen')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
             <Image source={require('../assets/shoppingBag.png')} style={styles.shopcart} />
           </TouchableOpacity>
         </View>
@@ -27,8 +28,12 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.story}>
         <Text style={styles.header}>OUR STORY</Text>
         <View style={styles.filter}>
-          <Image source={require('../assets/Listview.png')} />
-          <Image source={require('../assets/Filter.png')} style={styles.filt} />
+          <View style={styles.list}>
+            <Image source={require('../assets/Listview.png')} />
+          </View>
+          <View style={styles.wifi}>
+            <Image source={require('../assets/Filter.png')} style={styles.filt} />
+          </View>
         </View>
       </View>
       <ScrollView style={styles.productContainer}>
@@ -36,89 +41,121 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.dress}>
             <View>
               <View>
-                <Image source={require('../assets/dress1.png')} style={styles.fashion} />
-                <TouchableOpacity style={styles.addButton} onPress={() => addToCart({ id: 1, name: 'Dress 1', price: '$120', image: 'https://via.placeholder.com/200' })}>
+                <Image source={imagePaths.dress1} style={styles.fashion} />
+                <TouchableOpacity
+                  style={styles.addButton}
+                  onPress={() => addToCart({ id: 1, name: 'Office wear', price: '$120', description: 'reversible angora cardigan', imageKey: 'dress1' })}
+                >
                   <Image source={require('../assets/add_circle.png')} style={styles.addIcon} />
                 </TouchableOpacity>
               </View>
               <Text>Office Wear</Text>
               <Text style={styles.cardigan}>reversible angora cardigan</Text>
+              <Text style={styles.price}>$120</Text>
             </View>
             <View>
               <View>
-                <Image source={require('../assets/dress2.png')} style={styles.fashion} />
-                <TouchableOpacity style={styles.addButton} onPress={() => addToCart({ id: 2, name: 'Dress 2', price: '$120', image: 'https://via.placeholder.com/200' })}>
+                <Image source={imagePaths.dress2} style={styles.fashion} />
+                <TouchableOpacity
+                  style={styles.addButton}
+                  onPress={() => addToCart({ id: 2, name: 'Black', price: '$120', description: 'reversible angora cardigan', imageKey: 'dress2' })}
+                >
                   <Image source={require('../assets/add_circle.png')} style={styles.addIcon} />
                 </TouchableOpacity>
               </View>
               <Text>Black</Text>
               <Text style={styles.cardigan}>reversible angora cardigan</Text>
+              <Text style={styles.price}>$120</Text>
             </View>
           </View>
           <View style={styles.fits}>
             <View>
               <View>
-                <Image source={require('../assets/dress3.png')} style={styles.fashion} />
-                <TouchableOpacity style={styles.addButton} onPress={() => addToCart({ id: 3, name: 'Dress 3', price: '$120', image: 'https://via.placeholder.com/200' })}>
+                <Image source={imagePaths.dress3} style={styles.fashion} />
+                <TouchableOpacity
+                  style={styles.addButton}
+                  onPress={() => addToCart({ id: 3, name: 'Church Wear', price: '$120', description: 'reversible angora cardigan', imageKey: 'dress3' })}
+                >
                   <Image source={require('../assets/add_circle.png')} style={styles.addIcon} />
                 </TouchableOpacity>
               </View>
               <Text>Church wear</Text>
               <Text style={styles.cardigan}>reversible angora cardigan</Text>
+              <Text style={styles.price}>$120</Text>
             </View>
             <View>
               <View>
-                <Image source={require('../assets/dress4.png')} style={styles.fashion} />
-                <TouchableOpacity style={styles.addButton} onPress={() => addToCart({ id: 4, name: 'Dress 4', price: '$120', image: 'https://via.placeholder.com/200' })}>
+                <Image source={imagePaths.dress4} style={styles.fashion} />
+                <TouchableOpacity
+                  style={styles.addButton}
+                  onPress={() => addToCart({ id: 4, name: 'Lamerei', price: '$120', description: 'reversible angora cardigan', imageKey: 'dress4' })}
+                >
                   <Image source={require('../assets/add_circle.png')} style={styles.addIcon} />
                 </TouchableOpacity>
               </View>
               <Text>Lamerei</Text>
               <Text style={styles.cardigan}>reversible angora cardigan</Text>
+              <Text style={styles.price}>$120</Text>
             </View>
           </View>
           <View style={styles.fits}>
             <View>
               <View>
-                <Image source={require('../assets/dress5.png')} style={styles.fashion} />
-                <TouchableOpacity style={styles.addButton} onPress={() => addToCart({ id: 5, name: 'Dress 5', price: '$120', image: 'https://via.placeholder.com/200' })}>
+                <Image source={imagePaths.dress5} style={styles.fashion} />
+                <TouchableOpacity
+                  style={styles.addButton}
+                  onPress={() => addToCart({ id: 5, name: '21WN', price: '$120', description: 'reversible angora cardigan', imageKey: 'dress5' })}
+                >
                   <Image source={require('../assets/add_circle.png')} style={styles.addIcon} />
                 </TouchableOpacity>
               </View>
               <Text>21WN</Text>
               <Text style={styles.cardigan}>reversible angora cardigan</Text>
+              <Text style={styles.price}>$120</Text>
             </View>
             <View>
               <View>
-                <Image source={require('../assets/dress6.png')} style={styles.fashion} />
-                <TouchableOpacity style={styles.addButton} onPress={() => addToCart({ id: 6, name: 'Dress 6', price: '$120', image: 'https://via.placeholder.com/200' })}>
+                <Image source={imagePaths.dress6} style={styles.fashion} />
+                <TouchableOpacity
+                  style={styles.addButton}
+                  onPress={() => addToCart({ id: 6, name: 'Lopo', price: '$120', description: 'reversible angora cardigan', imageKey: 'dress6' })}
+                >
                   <Image source={require('../assets/add_circle.png')} style={styles.addIcon} />
                 </TouchableOpacity>
               </View>
               <Text>Lopo</Text>
               <Text style={styles.cardigan}>reversible angora cardigan</Text>
+              <Text style={styles.price}>$120</Text>
             </View>
           </View>
           <View style={styles.fits}>
             <View>
               <View>
-                <Image source={require('../assets/dress7.png')} style={styles.fashion} />
-                <TouchableOpacity style={styles.addButton} onPress={() => addToCart({ id: 7, name: 'Dress 7', price: '$120', image: 'https://via.placeholder.com/200' })}>
+                <Image source={imagePaths.dress7} style={styles.fashion} />
+                <TouchableOpacity
+                  style={styles.addButton}
+                  onPress={() => addToCart({ id: 7, name: '21WN', price: '$120', description: 'reversible angora cardigan', imageKey: 'dress7' })}
+                >
                   <Image source={require('../assets/add_circle.png')} style={styles.addIcon} />
                 </TouchableOpacity>
               </View>
               <Text>21WN</Text>
               <Text style={styles.cardigan}>reversible angora cardigan</Text>
+              <Text style={styles.price}>$120</Text>
             </View>
             <View>
               <View>
-                <Image source={require('../assets/dress3.png')} style={styles.fashion} />
-                <TouchableOpacity style={styles.addButton} onPress={() => addToCart({ id: 8, name: 'Dress 8', price: '$120', image: 'https://via.placeholder.com/200' })}>
+                <Image source={imagePaths.dress3} style={styles.fashion} />
+                <TouchableOpacity
+                  style={styles.addButton}
+                  onPress={() => addToCart({ id: 8, name: 'Lame', price: '$120', description: 'reversible angora cardigan', imageKey: 'dress3' })}
+                >
                   <Image source={require('../assets/add_circle.png')} style={styles.addIcon} />
                 </TouchableOpacity>
               </View>
-              <Text>lame</Text>
+              <Text>Lame</Text>
               <Text style={styles.cardigan}>reversible angora cardigan</Text>
+              <Text style={styles.price}>$120</Text>
             </View>
           </View>
         </View>
@@ -163,17 +200,19 @@ const styles = StyleSheet.create({
     marginTop: 30,
     flexDirection: 'row',
     justifyContent: 'space-around',
+    marginLeft: 30,
   },
   filt: {
-    marginLeft: 20,
+    marginLeft: 2,
   },
   productContainer: {
-    padding: 15,
-    marginBottom: 30,
+    padding: 10,
+    marginBottom: 60,
   },
   dress: {
     flexDirection: 'row',
     justifyContent: 'space-around',
+    paddingBottom: 50,
   },
   fashion: {
     width: 150,
@@ -196,6 +235,26 @@ const styles = StyleSheet.create({
   },
   cardigan: {
     fontSize: 10,
+  },
+  price: {
+    color: 'red',
+  },
+  list: {
+    backgroundColor: '#D3D3D3', 
+    height: 30,
+    width: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 30,
+  },
+  wifi: {
+    backgroundColor: '#D3D3D3', 
+    borderRadius: 30,
+    height: 30,
+    width: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 12,
   },
 });
 
